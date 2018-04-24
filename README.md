@@ -12,5 +12,6 @@
 ```
 
 ## Features
-* Nlog (https://github.com/NLog/NLog.Web/wiki/Getting-started-with-ASP.NET-Core-2)
+* Nlog (https://github.com/NLog/NLog.Web/wiki/Getting-started-with-ASP.NET-Core-2) 
 	Bug concerning internalLogFile https://github.com/NLog/NLog.Web/issues/201
+* EF Core

@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +8,14 @@ namespace Portal.Controllers
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {
-        private readonly ILogger<SampleDataController> _logger;
-
-        private static string[] Summaries = new[]
+         private static string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        public SampleDataController(ILogger<SampleDataController> logger)
-        {
-            _logger = logger;
-        }
-
-
         [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
-            _logger.LogInformation("[HTTPGET] SampleData");
-
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

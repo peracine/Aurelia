@@ -1,3 +1,4 @@
+using Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -19,11 +20,14 @@ namespace Portal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.InstallDalDependencies();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            PortalConfiguration.HeadersConfiguration(app);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

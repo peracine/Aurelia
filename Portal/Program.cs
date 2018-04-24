@@ -36,6 +36,7 @@ namespace Portal
                     logging.ClearProviders();
                     logging.SetMinimumLevel(LogLevel.Trace);
                 })
+                .UseKestrel(x => x.AddServerHeader = false)
                 .UseNLog()
                 .Build();
     }
